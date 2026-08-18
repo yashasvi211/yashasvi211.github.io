@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+:root {
+    --background: #111111;
+    --foreground: #d1d5db;
+    --card: #1a1a1a;
+    --card-foreground: #d1d5db;
+    --primary: #ef4444; /* bright red */
+    --primary-foreground: #111111; /* black text on red background */
+    --secondary: #9ca3af;
+    --secondary-foreground: #d1d5db;
+    --muted: #262626;
+    --muted-foreground: #9ca3af;
+    --accent: #ef4444;
+    --accent-foreground: #111111;
+    --border: #333333;
+}
+
+.dark {
+    --background: #111111;
+    --foreground: #d1d5db;
+    --card: #1a1a1a;
+    --card-foreground: #d1d5db;
+    --primary: #ef4444;
+    --primary-foreground: #111111;
+    --secondary: #9ca3af;
+    --secondary-foreground: #d1d5db;
+    --muted: #262626;
+    --muted-foreground: #9ca3af;
+    --accent: #ef4444;
+    --accent-foreground: #111111;
+    --border: #333333;
+}
+
+@theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-text: var(--foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-border: var(--border);
+    
+    --font-mono: "JetBrains Mono", "Fira Code", "Consolas", "Monaco", monospace;
+    --font-sans: ui-sans-serif, system-ui, sans-serif;
+    
+    --radius: 0.25rem;
+}
+
+html,
+body {
+    max-width: 100vw;
+    overflow-x: hidden;
+    background-color: var(--background);
+    color: var(--foreground);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+    font-family: var(--font-mono);
+}
+
+a {
+    text-decoration: none;
+}
+
+.led-bar {
+    width: 100%;
+    height: 1px;
+    position: relative;
+    background: var(--primary);
+    box-shadow: 0 0 5px var(--primary);
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary);
+}
+::-webkit-scrollbar-corner {
+    background: var(--muted);
+}
+
+::selection {
+    background: var(--primary);
+    color: var(--primary-foreground);
+}
