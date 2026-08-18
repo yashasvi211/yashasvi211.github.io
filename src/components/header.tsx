@@ -22,32 +22,32 @@ export function Header() {
     };
 
     const navItems = [
-        { label: "experience", href: "/#experience"  },
-        { label: "projects", href: "/#projects"  },
-        { label: "skills", href: "/#skills"  },
-        { label: "contact", href: "/#contact" }
+        { label: "Experience", href: "/#experience"  },
+        { label: "Projects", href: "/#projects"  },
+        { label: "Skills", href: "/#skills"  },
+        { label: "Contact", href: "/#contact" }
     ]
 
     return (
         <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-gray-800">
         <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between font-mono">
-            <Link href="/" className="text-lg hover:text-primary transition-colors text-foreground">
+            <Link href="/" className="text-lg hover:text-primary transition-colors text-foreground font-bold">
             yashasvi.
             </Link>
 
-            <nav className="hidden md:flex items-center space-x-4">
+            <nav className="hidden md:flex items-center space-x-6">
             {navItems.map((item, index) => (
                 <Link 
                 key={index} 
                 href={item.href} 
-                className="hover:text-primary transition-colors text-foreground"
+                className="hover:text-primary transition-colors text-secondary-foreground"
                 onClick={(e) => {
                     if (item.href.startsWith("/#") && pathname === "/") {
                     handleSmoothScroll(e, item.href);
                     }
                 }}
                 >
-                [{item.label}]
+                {item.label}
                 </Link>
             ))}
             </nav>
@@ -56,18 +56,18 @@ export function Header() {
             className="md:hidden text-foreground hover:text-primary transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
-            {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
         </div>
 
         {mobileMenuOpen && (
-            <div className="md:hidden bg-background border-t border-border font-mono">
-            <nav className="px-6 py-4 space-y-4">
+            <div className="md:hidden bg-background border-t border-border font-mono shadow-lg pb-4">
+            <nav className="px-6 py-4 flex flex-col space-y-4">
                 {navItems.map((item, index) => (
                 <Link
                     key={index}
                     href={item.href}
-                    className="block text-foreground hover:text-primary transition-colors"
+                    className="block text-foreground hover:text-primary transition-colors text-lg"
                     onClick={(e) => {
                     if (item.href.startsWith("/#") && pathname === "/") {
                         handleSmoothScroll(e, item.href);
@@ -76,7 +76,7 @@ export function Header() {
                     }
                     }}
                 >
-                    [{item.label}]
+                    {item.label}
                 </Link>
                 ))}
             </nav>

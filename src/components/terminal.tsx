@@ -26,6 +26,7 @@ export function Terminal() {
     const [historyIndex, setHistoryIndex] = useState(-1)
     const [screenSize, setScreenSize] = useState<"large" | "medium" | "small">("large")
     const inputRef = useRef<HTMLInputElement>(null)
+    const scrollContainerRef = useRef<HTMLDivElement>(null)
     const { theme, setTheme } = useTheme()
 
 useEffect(() => {
@@ -45,6 +46,13 @@ useEffect(() => {
     window.addEventListener("resize", checkScreenSize)
     return () => window.removeEventListener("resize", checkScreenSize)
 }, [])
+
+useEffect(() => {
+    // Scroll only the terminal container to the bottom
+    if (scrollContainerRef.current) {
+        scrollContainerRef.current.scrollTop = scrollContainerRef.current.scrollHeight;
+    }
+}, [history])
 
 const getPrompt = useCallback(() => {
     switch (screenSize) {
@@ -138,7 +146,7 @@ const commands: Record<string, Command> = useMemo(() => ({
         name: "linkedin",
         description: "Open LinkedIn profile",
         execute: () => {
-            setTimeout(() => window.open("https://linkedin.com/in/jake", "_blank"), 500)
+            setTimeout(() => window.open("https://linkedin.com/in/yashasvi211", "_blank"), 500)
             return "Opening LinkedIn profile..."
         }
     },
@@ -154,7 +162,7 @@ const commands: Record<string, Command> = useMemo(() => ({
         name: "email",
         description: "Open email client", 
         execute: () => {
-            setTimeout(() => window.location.href = "mailto:jake@su.edu", 500)
+            setTimeout(() => window.location.href = "mailto:yashasvi211@hotmail.com", 500)
             return "Opening email client..."
         }
     },
@@ -247,37 +255,36 @@ useEffect(() => {
 }, [])
 
 return (
-    <div className="border border-border rounded-lg p-2 sm:p-4 cursor-text font-mono text-xs sm:text-sm overflow-hidden">
-    <div className="space-y-1 max-h-[300px] overflow-y-auto">
-        {history.map((line, index) => (
-        <div
-            key={index}
-            className={`whitespace-pre-wrap break-words ${
-            line.type === "input" 
-                ? "text-foreground" 
-                : line.type === "error" 
-                ? "text-primary" 
-                : "text-secondary"
-            }`}
-        >
-            {line.content}
+    <div className="border border-border bg-card rounded-sm p-4 cursor-text font-mono text-xs sm:text-sm overflow-hidden shadow-sm" onClick={() => inputRef.current?.focus()}>
+        <div ref={scrollContainerRef} className="space-y-1 max-h-[300px] overflow-y-auto pr-2 custom-scrollbar scroll-smooth">
+            {history.map((line, index) => (
+            <div
+                key={index}
+                className={`whitespace-pre-wrap break-words ${
+                line.type === "input" 
+                    ? "text-foreground font-bold" 
+                    : line.type === "error" 
+                    ? "text-primary" 
+                    : "text-secondary-foreground"
+                }`}
+            >
+                {line.content}
+            </div>
+            ))}
+                
+            <div className="flex items-center min-w-0 pt-1">
+                <span className="text-foreground font-bold mr-2 flex-shrink-0">{getPrompt()}</span>
+                <input
+                    ref={inputRef}
+                    type="text"
+                    value={input}
+                    onChange={(e) => setInput(e.target.value)}
+                    onKeyDown={handleKeyDown}
+                    className="flex-1 min-w-0 bg-transparent outline-none text-foreground caret-primary"
+                    placeholder={getPlaceholder()}
+                />
+            </div>
         </div>
-        ))}
-            
-        <div className="flex items-center min-w-0">
-        <span className="text-foreground mr-1 sm:mr-2 flex-shrink-0">{getPrompt()}</span>
-        <input
-            ref={inputRef}
-            type="text"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            onKeyDown={handleKeyDown}
-            className="flex-1 min-w-0 bg-transparent outline-none text-foreground caret-primary"
-            placeholder={getPlaceholder()}
-        />
-        <span className="text-primary animate-pulse">█</span>
-        </div>
-    </div>
     </div>
     )
 }
