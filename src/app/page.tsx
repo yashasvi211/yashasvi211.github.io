@@ -62,26 +62,38 @@ export default function Home() {
             <main className="max-w-5xl mx-auto px-6 pt-24 pb-16 space-y-20">
 
                 {/* HERO SECTION */}
-                <section className="flex flex-col-reverse md:flex-row justify-between items-start md:items-start gap-6 md:gap-8">
-                    <div className="space-y-8 flex-1 w-full">
-                        <div className="space-y-6">
-                            <div className="flex flex-col sm:flex-row sm:items-end gap-4">
-                                <div className="flex items-center gap-3">
-                                    <TerminalSquare className="text-primary" size={28} />
-                                    <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground sm:whitespace-nowrap">Hello, I'm Yashasvi Parashar.</h1>
+                <section className="flex flex-col md:flex-row justify-between items-start gap-6 md:gap-8 pt-2 md:pt-0">
+                    <div className="space-y-6 md:space-y-8 flex-1 w-full min-w-0">
+                        <div className="space-y-4 md:space-y-6">
+                            
+                            {/* Mobile: Heading & Photo Side-by-Side | Desktop: Just Heading */}
+                            <div className="flex flex-row justify-between items-start gap-4">
+                                <div className="flex flex-col sm:flex-row sm:items-end gap-4">
+                                    <div className="flex items-start md:items-center gap-2 md:gap-3">
+                                        <TerminalSquare className="text-primary mt-1 md:mt-0 shrink-0" size={28} />
+                                        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground tracking-tight leading-tight md:leading-normal">
+                                            Hello, I'm<br /> Yashasvi Parashar.
+                                        </h1>
+                                    </div>
+                                </div>
+                                {/* Mobile Photo */}
+                                <div className="md:hidden w-20 h-20 sm:w-28 sm:h-28 rounded-full overflow-hidden border-4 border-primary/20 flex-shrink-0 shadow-md">
+                                    <img src="/profile.jpg" alt="Yashasvi Parashar" className="w-full h-full object-cover" />
                                 </div>
                             </div>
-                            <p className="bg-primary text-primary-foreground w-fit px-3 py-2 text-lg md:text-xl font-bold rounded-sm shadow-sm">
-                                I build software systems with purpose and performance.
+
+                            <p className="bg-primary text-primary-foreground w-fit px-3 md:px-4 py-2 md:py-2.5 text-sm sm:text-base md:text-xl font-bold rounded-sm shadow-sm leading-snug">
+                                Building thoughtful solutions to meaningful problems.
                             </p>
                         </div>
 
-                        <div className="pt-4 w-full max-w-3xl">
+                        <div className="pt-2 md:pt-4 w-full max-w-3xl">
                             <Terminal />
                         </div>
                     </div>
 
-                    <div className="w-32 h-32 md:w-44 md:h-44 lg:w-48 lg:h-48 rounded-full overflow-hidden border-4 border-primary/20 flex-shrink-0 ml-auto md:ml-auto md:mr-4 md:mt-6">
+                    {/* Desktop Photo */}
+                    <div className="hidden md:block w-44 h-44 lg:w-48 lg:h-48 rounded-full overflow-hidden border-4 border-primary/20 flex-shrink-0 shadow-md md:mt-6">
                         <img src="/profile.jpg" alt="Yashasvi Parashar" className="w-full h-full object-cover" />
                     </div>
                 </section>
@@ -100,11 +112,7 @@ export default function Home() {
                                     <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2">
                                         <div>
                                             <h3 className="text-xl md:text-2xl font-bold text-foreground">
-                                                {experience.title} <span className="text-primary">@ {
-                                                    experience.company === "AIVOA" 
-                                                        ? <a href="https://aivoa.ai/" target="_blank" rel="noopener noreferrer" className="hover:underline">{experience.company}</a>
-                                                        : experience.company
-                                                }</span>
+                                                {experience.title} <span className="text-primary">@ {experience.company}</span>
                                             </h3>
                                             {experience.location && (
                                                 <p className="text-secondary-foreground text-sm mt-1">
