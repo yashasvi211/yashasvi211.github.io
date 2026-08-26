@@ -158,7 +158,7 @@ export default function Home() {
                                         And Technology, Guna
                                     </h3>
                                     <p className="text-secondary-foreground mt-2 text-lg">
-                                        Bachelor Of Technology
+                                        Bachelor of Technology in Computer Science and Engineering
                                     </p>
                                 </div>
                                 <div className="mt-2 md:mt-0 shrink-0">
@@ -256,29 +256,47 @@ export default function Home() {
                             Ready to build something robust? Get in touch.
                         </p>
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                            <a href="mailto:yashasvi211@hotmail.com" className="flex items-center gap-3 text-secondary-foreground hover:text-primary transition-colors">
-                                <Mail size={20} className="text-primary" /> 
-                                <span className="break-all">yashasvi211@hotmail.com</span>
+                            <a href="mailto:yashasvi211@hotmail.com" className="flex items-center gap-3 text-secondary-foreground hover:text-primary transition-colors group">
+                                <Mail size={20} className="text-primary shrink-0" /> 
+                                <div className="flex flex-col">
+                                    <span className="text-foreground font-medium text-sm group-hover:text-primary transition-colors">Email</span>
+                                    <span className="break-all text-sm">yashasvi211@hotmail.com</span>
+                                </div>
                             </a>
-                            <a href="https://github.com/yashasvi211" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-secondary-foreground hover:text-primary transition-colors">
-                                <Github size={20} className="text-primary" /> 
-                                <span className="break-all">yashasvi211</span>
+                            <a href="https://github.com/yashasvi211" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-secondary-foreground hover:text-primary transition-colors group">
+                                <Github size={20} className="text-primary shrink-0" /> 
+                                <div className="flex flex-col">
+                                    <span className="text-foreground font-medium text-sm group-hover:text-primary transition-colors">GitHub</span>
+                                    <span className="break-all text-sm">yashasvi211</span>
+                                </div>
                             </a>
-                            <a href="https://www.linkedin.com/in/yashasvi211" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-secondary-foreground hover:text-primary transition-colors">
-                                <Linkedin size={20} className="text-primary" /> 
-                                <span className="break-all">yashasvi211</span>
+                            <a href="https://www.linkedin.com/in/yashasvi211" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-secondary-foreground hover:text-primary transition-colors group">
+                                <Linkedin size={20} className="text-primary shrink-0" /> 
+                                <div className="flex flex-col">
+                                    <span className="text-foreground font-medium text-sm group-hover:text-primary transition-colors">LinkedIn</span>
+                                    <span className="break-all text-sm">yashasvi211</span>
+                                </div>
                             </a>
-                            <a href="https://twitter.com/yashasvi211" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-secondary-foreground hover:text-primary transition-colors">
-                                <Twitter size={20} className="text-primary" /> 
-                                <span className="break-all">@yashasvi211</span>
+                            <a href="https://twitter.com/yashasvi211" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-secondary-foreground hover:text-primary transition-colors group">
+                                <Twitter size={20} className="text-primary shrink-0" /> 
+                                <div className="flex flex-col">
+                                    <span className="text-foreground font-medium text-sm group-hover:text-primary transition-colors">Twitter (X)</span>
+                                    <span className="break-all text-sm">@yashasvi211</span>
+                                </div>
                             </a>
-                            <a href="https://leetcode.com/yashasvi211" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-secondary-foreground hover:text-primary transition-colors">
-                                <Code size={20} className="text-primary" /> 
-                                <span className="break-all">yashasvi211</span>
+                            <a href="https://leetcode.com/yashasvi211" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-secondary-foreground hover:text-primary transition-colors group">
+                                <Code size={20} className="text-primary shrink-0" /> 
+                                <div className="flex flex-col">
+                                    <span className="text-foreground font-medium text-sm group-hover:text-primary transition-colors">LeetCode</span>
+                                    <span className="break-all text-sm">yashasvi211</span>
+                                </div>
                             </a>
-                            <a href="https://bsky.app/profile/yashasvi211.bsky.social" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-secondary-foreground hover:text-primary transition-colors">
-                                <Cloud size={20} className="text-primary" /> 
-                                <span className="break-all">@yashasvi211.bsky.social</span>
+                            <a href="https://bsky.app/profile/yashasvi211.bsky.social" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-secondary-foreground hover:text-primary transition-colors group">
+                                <Cloud size={20} className="text-primary shrink-0" /> 
+                                <div className="flex flex-col">
+                                    <span className="text-foreground font-medium text-sm group-hover:text-primary transition-colors">Bluesky</span>
+                                    <span className="break-all text-sm">@yashasvi211.bsky.social</span>
+                                </div>
                             </a>
                         </div>
                     </div>

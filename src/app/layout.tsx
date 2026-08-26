@@ -3,7 +3,7 @@ import { ThemeProvider } from "@/components/theme-context"
 import "./globals.css";
 
 export const metadata: Metadata = {
-    title: "Yashasvi Aina",
+    title: "yashasvi211",
     description: "A software developer focused on performance, game dev, and AI-powered sentiment analysis for social media platforms.",
     icons: {
         icon: '/image.png',
