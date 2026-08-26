@@ -5,6 +5,9 @@ import "./globals.css";
 export const metadata: Metadata = {
     title: "Yashasvi Aina",
     description: "A software developer focused on performance, game dev, and AI-powered sentiment analysis for social media platforms.",
+    icons: {
+        icon: '/image.png',
+    },
 }
 
 export default function RootLayout({
