@@ -200,12 +200,14 @@ export default function Home() {
                                             </span>
                                         ))}
                                     </div>
-                                    <button
-                                        onClick={() => setSelectedProject(project)}
+                                    <a
+                                        href={project.github}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                         className="w-full flex justify-center items-center gap-2 bg-muted hover:bg-primary hover:text-primary-foreground border border-border py-2 transition-colors rounded-sm"
                                     >
                                         <Code2 size={16} /> View Code
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
                         ))}
