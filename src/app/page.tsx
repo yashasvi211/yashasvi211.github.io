@@ -70,7 +70,6 @@ export default function Home() {
                             <div className="flex flex-row justify-between items-start gap-4">
                                 <div className="flex flex-col sm:flex-row sm:items-end gap-4">
                                     <div className="flex items-start md:items-center gap-2 md:gap-3">
-                                        <TerminalSquare className="text-primary mt-1 md:mt-0 shrink-0" size={28} />
                                         <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground tracking-tight leading-tight md:leading-normal">
                                             Hello, I'm<br /> Yashasvi Parashar.
                                         </h1>
